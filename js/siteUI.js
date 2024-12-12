@@ -115,7 +115,7 @@ async function showPosts(reset = false) {
     $("#viewTitle").text("Fil de nouvelles");
     periodic_Refresh_paused = false;
     if(sessionStorage.getItem("activeUser")){
-        initTimeout(300, ()=>{Users_API.Logout(JSON.parse(sessionStorage.getItem("activeUser"))); showPosts();});
+        initTimeout(1000, ()=>{Users_API.Logout(JSON.parse(sessionStorage.getItem("activeUser"))); showPosts();});
     }
     
     await postsPanel.show(reset);
@@ -876,7 +876,7 @@ function renderLoginForm() {
 
                 }
                 
-                initTimeout(300, ()=>{Users_API.Logout(JSON.parse(sessionStorage.getItem("activeUser"))); showPosts();});
+                initTimeout(1000, ()=>{Users_API.Logout(JSON.parse(sessionStorage.getItem("activeUser"))); showPosts();});
             });
         } else if (!loginInfo.Email) {
             $("#emailError").append("Courriel invalide");
