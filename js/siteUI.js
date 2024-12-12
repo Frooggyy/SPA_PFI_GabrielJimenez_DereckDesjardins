@@ -333,17 +333,20 @@ function renderPost(post, loggedUser) {
             
         });
         $('.promoteCmd').on("click",async  function () {
-            Users_API.Promote($(this).attr("id"));
-            showGestionPage();
+            Users_API.Promote($(this).attr("id")).then(()=>{
+                showGestionPage();
+            });
+            
         });
         $('.deleteUserCmd').on("click", function () {
             Users_API.Delete($(this).attr("id")).then(()=>{
-                Posts_API.DeleteAll($(this).attr("id"));
+                showGestionPage();
             });
         });
         $('.banCmd').on("click", function () {
-            Users_API.Block($(this).attr("id"));
-            showGestionPage();
+            Users_API.Block($(this).attr("id")).then(()=>{
+                showGestionPage();
+            });
         });
         
     });
