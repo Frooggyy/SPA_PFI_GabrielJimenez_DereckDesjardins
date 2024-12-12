@@ -1,6 +1,6 @@
 
 class Users_API {
-    static API_URL() { return "http://localhost:5000/" };
+    static API_URL() { return "https://decisive-spurious-bolt.glitch.me/" };
     static initHttpState() {
         this.currentHttpError = "";
         this.currentStatus = 0;

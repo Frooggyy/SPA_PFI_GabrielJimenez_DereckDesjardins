@@ -1,6 +1,6 @@
 
 class Posts_API {
-    static API_URL() { return "http://localhost:5000/api/posts" };
+    static API_URL() { return "https://decisive-spurious-bolt.glitch.me/api/posts" };
     static initHttpState() {
         this.currentHttpError = "";
         this.currentStatus = 0;
@@ -81,7 +81,7 @@ class Posts_API {
     static async DeleteAll(userId){
         return new Promise(resolve => {
             $.ajax({
-                url: "http://localhost:5000" +"/posts/deleteAll",
+                url: "https://decisive-spurious-bolt.glitch.me" +"/posts/deleteAll",
                 type: "DELETE",
                 complete: () => {
                     Posts_API.initHttpState();
@@ -96,7 +96,7 @@ class Posts_API {
     static async Like(data){
         return new Promise(resolve =>{
             $.ajax({
-                url:"http://localhost:5000" +"/posts/like",
+                url:"https://decisive-spurious-bolt.glitch.me" +"/posts/like",
                 type:"PUT",
                 contentType: 'application/json',
                 data: JSON.stringify(data),
